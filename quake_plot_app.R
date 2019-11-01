@@ -11,8 +11,8 @@ library(ggplot2)
 
 #quakes dataset is a list of earth quake site location lat and long, station location, depth, magnitude (from richter scale)
 # We'll limit the range of selectable carats to teh actual range of earthquake magnitudes
-min1.mag <- min(quakes$mag)
-max1.mag <- max(quakes$mag)
+min.mag <- min(quakes$mag)
+max.mag <- max(quakes$mag)
 
 # Need a vector of axis variables as characters
 axis_vars <- names(quakes)
@@ -35,9 +35,9 @@ ui <- fluidPage(
       # This is a range slider (i.e. there's a max and min). It is set that way by "value" (the starting value), which is a 2-element vector
       sliderInput("magrange",
                   "Earth Quake Magnitude",
-                  min = min1.mag,
-                  max = max1.mag,
-                  value = c(min1.mag, max1.mag)),
+                  min = min.mag,
+                  max = max.mag,
+                  value = c(min.mag, max.mag)),
       
       
       # Select x and y variables
